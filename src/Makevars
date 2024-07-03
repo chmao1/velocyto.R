@@ -1,7 +1,4 @@
 CXX_STD = CXX11
-CC = /opt/homebrew/bin/clang
-CXX = /opt/homebrew/bin/clang++
 PKG_CXXFLAGS= $(SHLIB_OPENMP_CXXFLAGS)
 PKG_CFLAGS=$(SHLIB_OPENMP_CFLAGS)
-LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"
-PKG_LIBS=-lboost_filesystem -lboost_system  -lstdc++  -L /opt/homebrew/Cellar/boost/1.85.0/lib/
+PKG_LIBS=-lboost_filesystem -lboost_system -lstdc++ $(LAPACK_LIBS) $(BLAS_LIBS) $(SHLIB_OPENMP_CFLAGS) $(FLIBS) -L /opt/homebrew/Cellar/boost/1.83.0/lib/
